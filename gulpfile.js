@@ -98,8 +98,8 @@ gulp.task('setWatch', function() {
   global.isWatching = true;
 });
 
-gulp.task('watch', ['setWatch', 'browserSync'], function() {
-  gulp.watch(config.markup, ['markup']);
+gulp.task('watch', ['setWatch', 'markup', 'browserSync'], function() {
+  gulp.watch(config.markup);
 });
 
 
