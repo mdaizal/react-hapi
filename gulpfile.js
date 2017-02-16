@@ -1,3 +1,5 @@
+// Heavily inspired (and copy) from https://github.com/callemall/material-ui-browserify-gulp-example/tree/f893414ed2f48864f909a9d537b9f332c65488d8/gulp
+
 var gulp          = require('gulp');
 var browserify    = require('browserify');
 var watchify      = require('watchify');
@@ -47,8 +49,8 @@ gulp.task('browserify', function(){
   };
 
   bundler
-    //.transform(babelify.configure())
-    .transform(babelify, { presets: [ 'es2015', 'react' ]});
+    //.transform(babelify.configure()) // nothing happened
+    .transform(babelify, { presets: [ 'es2015', 'react' ]}); //THIS!
 
   if(global.isWatching) {
     bundler = watchify(bundler);
